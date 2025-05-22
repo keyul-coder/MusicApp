@@ -99,7 +99,6 @@ export default function App() {
 </View>
 
 
-      {/* Audiobooks Section */}
      {/* Audiobooks Section */}
 <Text style={styles.sectionTitle}>Audiobooks for you</Text>
 <View style={styles.audiobookGrid}>
@@ -107,7 +106,7 @@ export default function App() {
     <View key={book.id} style={styles.card}>
       <Image source={book.image} style={styles.cardImage} />
       <TouchableOpacity style={styles.heartIcon}>
-        <Text style={{ fontSize: 18 }}>🤍</Text>
+        <Text style={{ fontSize: 18 }}>❤️</Text>
       </TouchableOpacity>
       <Text style={styles.premiumLabel}>Included in Premium</Text>
       <Text style={styles.cardTitle} numberOfLines={1}>{book.title}</Text>
@@ -196,8 +195,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
   },
   albumText: {
-    color: 'white',
+    color: '#f90000',
     fontWeight: 'bold',
+    fontSize: 16,
   },
   subText: {
     color: 'gray',
