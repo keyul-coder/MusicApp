@@ -40,14 +40,14 @@ export default function App() {
     },
     {
       id: 2,
-      title: 'Control your mind and master your emotions',
-      author: 'Eric Robertson',
+      title: 'Bhajan Sangeet -Control your mind',
+      author: 'hemant chauhan',
       image: require('./assets/audiobook.jpg'),
     },
     {
       id: 3,
-      title: 'Ikigai: The Japanese Secret',
-      author: 'Hector Garcia',
+      title: 'વિશ્વંભરી સ્તુતિ -ઉમિયા માતા ',
+      author: 'Sagar Patel ',
       image: require('./assets/audiobook.jpg'),
     },
   ];
@@ -74,7 +74,7 @@ export default function App() {
 <View style={styles.playlistGrid}>
   {playlists.map((playlist) => (
     <TouchableOpacity key={playlist.id} style={styles.playlistItem}>
-      <Ionicons name="musical-notes" size={24} color="#61dafb" />
+      <Ionicons name="musical-notes" size={24} color="red" />
       <Text style={styles.playlistText}>{playlist.name}</Text>
     </TouchableOpacity>
   ))}
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     padding: 16,
-    backgroundColor: '#121212',
+    backgroundColor: 'black',
   },
   categoryBar: {
     flexDirection: 'row',
