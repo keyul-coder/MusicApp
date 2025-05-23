@@ -34,19 +34,19 @@ export default function App() {
   const audiobooks = [
     {
       id: 1,
-      title: 'Dakla mix',
-      author: 'Bandish Projekt',
+      title: 'Mastering Conversations',
+      author: 'Helen Stone',
       image: require('./assets/audiobook.jpg'),
     },
     {
       id: 2,
-      title: 'Bhajan Sangeet -Control your mind',
-      author: 'hemant chauhan',
+      title: 'Control your mind and master your emotions',
+      author: 'Sandeep Mahesawari',
       image: require('./assets/audiobook.jpg'),
     },
     {
       id: 3,
-      title: 'વિશ્વંભરી સ્તુતિ -ઉમિયા માતા ',
+      title: 'Shrimad Bhagavad Geeta in Gujarati',
       author: 'Sagar Patel ',
       image: require('./assets/audiobook.jpg'),
     },
@@ -84,19 +84,24 @@ export default function App() {
 <Text style={styles.sectionTitle}>Recents</Text>
 <View style={styles.recentsGrid}>
   {recents.map((item) => (
-    <TouchableOpacity key={item.id} style={styles.recentItem} >
+    <TouchableOpacity key={item.id} style={styles.recentItem}>
       <ImageBackground
         source={item.image}
         style={styles.albumArt}
-        imageStyle={{ borderRadius: 6 }}
+        imageStyle={{ borderRadius: 8 }}
       >
-        <Text style={styles.albumText}>{item.name}</Text>
+        <View style={styles.overlay}>
+          <Text style={styles.albumText} numberOfLines={1}>
+            {item.name}
+          </Text>
+        </View>
       </ImageBackground>
       <Text style={styles.subText}>Playlist</Text>
       <Text style={styles.subText}>User 1</Text>
     </TouchableOpacity>
   ))}
 </View>
+
 
 
      {/* Audiobooks Section */}
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
   },
   appleButton: {
     marginRight: 10,
-    backgroundColor: '#1DB954',
+    backgroundColor: 'crimson',
     padding: 10,
     borderRadius: 50,
   },
@@ -181,28 +186,40 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginBottom: 20,
+    paddingHorizontal: 10,
   },
+  
   recentItem: {
-    width: '48%',
-    marginBottom: 16,
+    width: '30%',
+    marginBottom: 15,
   },
+  
   albumArt: {
     width: '100%',
-    height: 100,
+    aspectRatio: 1, 
     justifyContent: 'flex-end',
-    padding: 5,
-    backgroundColor: '#333',
+    overflow: 'hidden',
+    color: ' red'
+    
   },
+  
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    paddingVertical: 4,
+    paddingHorizontal: 6,
+  },
+  
   albumText: {
-    color: '#f90000',
+    color: 'white',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
   },
   subText: {
-    color: 'gray',
     fontSize: 12,
+    color: '#ccc',
+    marginTop: 2,
   },
+  
   audiobookGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
